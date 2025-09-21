@@ -19,7 +19,7 @@ int function_of_check(FILE *f)
     }
     while( fscanf(f, "%lf", &curr) == 1){
         if(curr-prev<=eps) violations_typeC++;
-        if(curr-prevprev<eps && curr-prevprev>eps) violations_typeE++;
+        if(fabs(curr-prevprev>eps)) violations_typeE++;
         if(violations_typeC>1){
                 return -2;
         }
