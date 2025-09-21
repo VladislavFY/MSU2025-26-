@@ -13,7 +13,7 @@ int function_of_check(FILE *f)
         return -3;
     }
     while( fscanf(f, "%lf", &curr) == 1){
-        if(curr-prev>=0 ){
+        if(curr-prev >= -eps ){
             len_of_curr++;
             if(len_of_curr>=max_len){
                 max_len=len_of_curr;
