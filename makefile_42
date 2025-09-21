@@ -1,0 +1,9 @@
+all: task42.o function_42.o
+	gcc task42.o function_42.o && rm *.o
+
+task42.o: task42.c
+	gcc -c task42.c
+
+function_42.o: function_42.c
+	gcc -c function_42.c
+
