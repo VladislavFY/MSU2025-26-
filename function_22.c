@@ -18,7 +18,7 @@ int function_of_check(FILE *f)
     double curr = 0 , prev = 0 , prevprev = 0 , next = 0 ;
     int violations = 0;
     int have_next = 0;   /* флаг: в 'next' есть ранее прочитанное значение */
-    int done = 0;        /* флаг окончания чтения */
+    int read_done = 0;        /* флаг окончания чтения */
     if (fscanf(f, "%lf", &prevprev) != 1) {
         printf("File is empty");
         return -3;
@@ -29,7 +29,6 @@ int function_of_check(FILE *f)
     }
 
     while (!done) {
-        int r = 0;
         if (have_next) {
             curr = next;
             have_next = 0;
